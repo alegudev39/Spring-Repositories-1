@@ -1,9 +1,6 @@
 package com.dblibproject.dblibproject;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 @Entity
 public class Car {
@@ -12,8 +9,11 @@ public class Car {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(nullable = false)
     private String modelName;
+    @Column(nullable = false)
     private String serialNumber;
+    @Column(nullable = true)
     private Double currentPrice;
 
     // Getters and Setters
